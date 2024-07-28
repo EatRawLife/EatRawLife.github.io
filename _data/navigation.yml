@@ -9,13 +9,13 @@ main:
   - title: "Teaching"
     url: /teaching/    
     
-  - title: "포트폴리오"
+  - title: "Portfolio"
     url: /portfolio/
         
-  - title: "블로그 게시글"
+  - title: "Blog Posts"
     url: /year-archive/
     
-  - title: "경력"
+  - title: "CV"
     url: /cv/
     
   - title: "Guide"
