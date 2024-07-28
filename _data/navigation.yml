@@ -1,21 +1,12 @@
 # main links links
-main:
-  - title: "Publications"
-    url: /publications/
-
-  - title: "Talks"
-    url: /talks/    
-
-  - title: "Teaching"
-    url: /teaching/    
-    
-  - title: "Portfolio"
-    url: /portfolio/
-        
-  - title: "Blog Posts"
+main:  
+  - title: "포스트"
     url: /year-archive/
     
-  - title: "CV"
+  - title: "포트폴리오"
+    url: /portfolio/
+    
+  - title: "경력"
     url: /cv/
     
   - title: "Guide"
