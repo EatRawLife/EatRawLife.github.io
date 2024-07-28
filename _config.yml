@@ -8,7 +8,7 @@
 
 # Basic Site Settings
 locale                   : "en-KR"
-title                    : "김동건 / ㅇㅅㅇ"
+title                    : "머리에 든게 없는 컴붕이의 노트"
 title_separator          : "-"
 name                     : &name "김동건"
 description              : &description "얘는 그냥 아는게 없음"
