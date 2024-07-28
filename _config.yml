@@ -7,12 +7,12 @@
 # server process.
 
 # Basic Site Settings
-locale                   : "en-US"
-title                    : "Your Name / Site Title"
+locale                   : "en-KR"
+title                    : "김동건 / ㅇㅅㅇ"
 title_separator          : "-"
-name                     : &name "Your Name"
-description              : &description "personal description"
-url                      : https://academicpages.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+name                     : &name "김동건"
+description              : &description "얘는 그냥 아는게 없음"
+url                      : https://eatrawlife.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "academicpages/academicpages.github.io"
 
@@ -22,13 +22,13 @@ repository               : "academicpages/academicpages.github.io"
 author:
   # Biographic information
   avatar           : "profile.png"
-  name             : "Your Sidebar Name"
+  name             : "김동건"
   pronouns         : # example: "she/her"  
-  bio              : "Short biography for the left-hand sidebar"
-  location         : "Earth"
-  employer         : "Red Brick University"
+  bio              : "ㅇㅅㅇ"
+  location         : "대전광역시 유성구"
+  employer         : "Chungnam national university"
   uri              : # URL
-  email            : "none@example.org" 
+  email            : "rhythmjoygo@gmail.com" 
 
   # Academic websites
   arxiv            : # URL - Update with the correct link to your profile
