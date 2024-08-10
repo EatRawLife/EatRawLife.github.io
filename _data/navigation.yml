@@ -5,6 +5,9 @@ main:
     
   - title: "포트폴리오"
     url: /portfolio/
+
+  - title: "일정"
+    url: /diary/
     
   - title: "경력"
     url: /cv/

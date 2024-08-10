@@ -10,6 +10,11 @@ tags:
 
 그래서  관련되 걸 간단하게나마 정리해 두려고 한다.
 
+https://www.youtube.com/watch?v=8z2SRtYpJuQ&t=146s
+마크다운 설명.
+
+![익스텐션들](/postPic/24-08-05/image.png)
+
 * ## 사용했던 링크
  1. [www.markdowntutorial.com](https://www.markdowntutorial.com/)  
   간단한 문제들로 마크다운 기본기를 다지게 해뒀음. _물론 너무 기본기긴 함_..  
