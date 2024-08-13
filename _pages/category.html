@@ -1,0 +1,29 @@
+---
+layout: archive
+permalink: /category/
+title: "category"
+author_profile: true
+redirect_from:
+  - /wordpress/blog-posts/
+---
+
+
+<div id="page-category">
+  <h1 class="pl-lg-2">
+    <i class="far fa-folder-open fa-fw text-muted"></i>
+    {{ page.title }}
+    <span class="lead text-muted pl-2">{{ site.posts | size }}</span>
+  </h1>
+
+  <ul class="post-content pl-0">
+    {% assign post_df = site.data.locales[lang].date_format.post.long %}
+
+    {% for post in site.posts %}
+    <li class="d-flex justify-content-between pl-md-3 pr-md-3">
+      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+      <span class="dash flex-grow-1"></span>
+      <span class="text-muted small">{{ post.date | date: post_df }}</span>
+    </li>
+    {% endfor %}
+  </ul>
+</div>
