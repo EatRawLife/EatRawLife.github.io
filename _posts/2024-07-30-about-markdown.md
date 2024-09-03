@@ -11,7 +11,9 @@ tags:
 그래서  관련되 걸 간단하게나마 정리해 두려고 한다.
 
 https://www.youtube.com/watch?v=8z2SRtYpJuQ&t=146s
-마크다운 설명.
+마크다운 설명.  
+
+[마크다운 깃허브 가이드](https://docs.github.com/ko/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#ignoring-markdown-formatting)
 
 ![익스텐션들](/postPic/24-08-05/image.png)
 
