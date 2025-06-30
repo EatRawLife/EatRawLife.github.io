@@ -24,10 +24,10 @@ author:
   avatar           : "profile.gif"
   name             : "김동건/eatRawLife"
   pronouns         : # example: "she/her"  
-  bio              : "ㅇㅅㅇ"
-  location         : "대전광역시 유성구, 대한민국"
-  employer         : "Chungnam national university"
-  uri              : # URL
+  bio              : "열심히 해보려고요."
+  location         : "통영시, 경상남도"
+  employer         : "충남대학교 컴퓨터융합학부"
+  uri              : # 사이트
   email            : "rhythmjoygo@gmail.com" 
 
   # Academic websites
@@ -70,7 +70,7 @@ author:
   weibo            : # Username
   wikipedia        : # Username
   xing             : # Username
-  youtube          : # Username
+  youtube          : "UCY715mWaTjEgTwWG5f9_qzg"
   zhihu            : # URL
 
 

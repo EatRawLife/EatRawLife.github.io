@@ -1,16 +1,16 @@
 # main links links
 main:  
-  - title: "포스트"
-    url: /category/
+  #title: "포스트"
+  #url: /category/
     
-  - title: "포트폴리오"
-    url: /portfolio/
+  # title: "포트폴리오"
+  #  url: /portfolio/
 
-  - title: "일정"
-    url: /diary/
+  # title: "일정"
+  #  url: /diary/
     
-  - title: "경력"
-    url: /cv/
+  #- title: "경력"
+  #  url: /cv/
     
-  - title: "Guide"
-    url: /markdown/
+  #title: "Guide"
+  #url: /markdown/
