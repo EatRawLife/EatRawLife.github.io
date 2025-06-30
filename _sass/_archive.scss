@@ -245,7 +245,9 @@
     }
   }
 }
-.archive__item {
+
+
+.archive__item2 {
   width: 300px;               // 고정 너비
   height: 420px;              // 고정 높이
   background-color: #f9f9f9;
@@ -265,13 +267,21 @@
   }
 }
 
-.archive {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: start; // 또는 center
+.archive__item {
+  background-color: #f9f9f9;     // 아주 연한 회색
+  border-radius: 12px;           // 모서리 둥글게
+  padding: 0.5em 0.5em;            // 내부 여백
+  margin: 1.5em 0;               // 항목 간 간격
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05); // 약한 그림자
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #f0f0f0;   // 마우스 올리면 살짝 진해짐
+  }
 }
 
-.archive__post-row {
+
+.archive__cate-row {
   display: flex;
   flex-wrap: wrap;
   justify-content: center; /* ✅ 가운데 정렬 */
@@ -280,7 +290,7 @@
   margin-bottom: 2em;
 }
 
-.archive__post-col {
+.archive__cate-col {
   flex: 0 0 42%;            /* ✅ 50%보다 조금 좁혀서 좌우 여유 확보 */
   box-sizing: border-box;
 }

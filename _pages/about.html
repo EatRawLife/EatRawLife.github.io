@@ -15,12 +15,12 @@ redirect_from:
     {% if forloop.index0 != 0 %}
       </div> <!-- 끝났던 row 닫기 -->
     {% endif %}
-    <div class="archive__post-row">
+    <div class="archive__cate-row">
     {% capture written_year %}{{ year }}{% endcapture %}
   {% endif %}
 
-  <div class="archive__post-col">
-    <article class="archive__item">
+  <div class="archive__cate-col">
+    <article class="archive__item2">
     <div class="archive__item-body">
       <h2 class="archive__item-title">
         <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
