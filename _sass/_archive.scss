@@ -28,16 +28,18 @@
 }
 
 .archive__subtitle {
-  margin: 1.414em 0 0;
+  margin: 2em 0 0;
   padding-bottom: 0.5em;
   font-size: $type-size-5;
-  color: mix(#fff, $gray, 25%);
-  border-bottom: 1px solid $border-color;
+  color: mix(#fff, $gray, 15%);
+  border-bottom: 2px solid #aaaaaab0; // 선도 진하게
 
   + .list__item .archive__item-title {
-    margin-top: 0.5em;
+    margin-top: 0.2em;
   }
 }
+
+
 
 .archive__item-title {
   margin-bottom: 0.25em;
@@ -241,5 +243,17 @@
         width: span(7 of 12);
       }
     }
+  }
+}
+.archive__item {
+  background-color: #f9f9f9;     // 아주 연한 회색
+  border-radius: 12px;           // 모서리 둥글게
+  padding: 0.5em 0.5em;            // 내부 여백
+  margin: 1.5em 0;               // 항목 간 간격
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05); // 약한 그림자
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #f0f0f0;   // 마우스 올리면 살짝 진해짐
   }
 }
