@@ -1,0 +1,7 @@
+- name: 모각코
+  description: 25년도 하반기 모각코팀 "복학생 향우회"
+  path: /mogak/
+
+- name: 포스트들
+  description: 아직 분류되지 않은 잡다한 포스트들을 저장합니다.
+  path: /posts/
