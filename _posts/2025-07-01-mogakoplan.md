@@ -1,6 +1,6 @@
 ---
 title: 모각코 팀 '복학생 향우회' 계획
-date: 2024-07-01
+date: 2025-07-01
 permalink: /posts/2025/07
 tags:
   - 모각코
