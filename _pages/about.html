@@ -9,24 +9,20 @@ redirect_from:
 ---
 
 {% include base_path %}
-
-{% assign columns_per_row = 3 %}
+{% assign columns_per_row = 4 %}
 
 {% for category in site.data.categories %}
-  {% capture current_index %}{{ forloop.index0 | modulo: columns_per_row }}{% endcapture %}
+  {% assign col_index = forloop.index0 | modulo: columns_per_row %}
 
-  {% if current_index == '0' %}
-    {% if forloop.index0 != 0 %}
-      </div> <!-- 이전 row 닫기 -->
-    {% endif %}
-    <div class="archive__cate-row"> <!-- 새 row 시작 -->
+  {% if col_index == 0 %}
+    {% unless forloop.first %}</div>{% endunless %}
+    <div class="archive__cate-row">
   {% endif %}
 
   <div class="modern-card">
-    <div href="{{ category.path | relative_url }}" class="modern-card-link">
+    <div class="modern-card-link">
       <div class="modern-card-topline"></div>
       <div class="modern-card-icon">
-        <!-- 아이콘: SVG나 이모지로 교체 가능 -->
         <svg width="40" height="40" viewBox="0 0 24 24" fill="none">
           <linearGradient id="folderGradient" x1="0" y1="0" x2="0" y2="24" gradientUnits="userSpaceOnUse">
             <stop stop-color="#FFE082"/>
@@ -43,9 +39,5 @@ redirect_from:
     </div>
   </div>
 
-  {% if forloop.last %}
-    </div> <!-- 마지막 row 닫기 -->
-  {% endif %}
+  {% if forloop.last %}</div>{% endif %}
 {% endfor %}
-
-

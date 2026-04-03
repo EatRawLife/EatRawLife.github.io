@@ -9,3 +9,7 @@
 - name: 졸업 프로젝트
   description:  UEFI의 DXE 바이너리를 IR(P-code)으로 리프팅하여 취약점을 분석하는 도구 제작합니다.
   path: /zproject/
+
+- name: Max Random 랩 미팅 
+  description: 주제에 상관없이 자신이 부족한 부분을 개선하려는 노력과 그 성과를 매주 공유합니다.
+  path: /maxrandom/
