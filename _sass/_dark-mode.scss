@@ -1,0 +1,423 @@
+/* ==========================================================================
+   Dark Mode — Chrome-inspired palette
+   ==========================================================================
+   bg-base    : #202124   (page background)
+   bg-surface : #292a2d   (cards, dropdowns, header)
+   bg-raised  : #35363a   (hover states, code, inputs)
+   text-pri   : #e8eaed
+   text-sec   : #9aa0a6
+   link       : #8ab4f8
+   border     : #3c4043
+*/
+
+/* ── Toggle button ───────────────────────────────────────────────────────── */
+.dark-mode-toggle {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 9999;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  background-color: #f1f3f4;
+  color: #3c4043;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.25s ease, color 0.25s ease,
+              box-shadow 0.25s ease, transform 0.15s ease;
+
+  &:hover {
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+    transform: scale(1.08);
+  }
+
+  .icon-sun  { display: none; }
+  .icon-moon { display: inline; }
+}
+
+/* ── Dark mode root ──────────────────────────────────────────────────────── */
+html.dark-mode {
+
+  /* Button */
+  .dark-mode-toggle {
+    background-color: #35363a;
+    color: #e8eaed;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+    .icon-sun  { display: inline; }
+    .icon-moon { display: none; }
+  }
+
+  /* ── Base ────────────────────────────────────────────────────────────── */
+  body {
+    background-color: #202124 !important;
+    color: #e8eaed !important;
+  }
+
+  h1, h2, h3, h4, h5, h6 { color: #e8eaed !important; }
+  p, li, dt, dd, span     { color: #e8eaed; }
+  hr { border-color: #3c4043 !important; }
+  a  { color: #8ab4f8 !important; &:hover { color: #aecbfa !important; } }
+
+  /* ── Masthead / header ───────────────────────────────────────────────── */
+  .masthead {
+    background: #292a2d !important;
+    border-bottom-color: #3c4043 !important;
+  }
+
+  /* ── Greedy nav ──────────────────────────────────────────────────────── */
+  .greedy-nav {
+    background: #292a2d !important;
+
+    a {
+      color: #e8eaed !important;
+      &:hover { color: #8ab4f8 !important; }
+    }
+
+    button {
+      background-color: #35363a !important;
+      color: #e8eaed !important;
+    }
+
+    .visible-links a:before { background: #8ab4f8 !important; }
+
+    .hidden-links {
+      background: #292a2d !important;
+      border-color: #3c4043 !important;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5) !important;
+
+      a {
+        color: #e8eaed !important;
+        &:hover { color: #8ab4f8 !important; background: #35363a !important; }
+      }
+
+      li { border-bottom-color: #3c4043 !important; }
+      &:before { border-color: #3c4043 transparent !important; }
+      &:after  { border-color: #292a2d transparent !important; }
+    }
+  }
+
+  /* ── Sidebar / author profile ────────────────────────────────────────── */
+  .sidebar { background-color: #202124 !important; }
+
+  .author__name,
+  .author__pronouns { color: #e8eaed !important; }
+  .author__bio      { color: #9aa0a6 !important; }
+
+  .author__avatar img { border-color: #3c4043 !important; }
+
+  .author__urls-wrapper button {
+    color: #e8eaed !important;
+    background-color: #35363a !important;
+    border-color: #3c4043 !important;
+  }
+
+  .author__urls {
+    background: #292a2d !important;
+    border-color: #3c4043 !important;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5) !important;
+
+    li { color: #e8eaed !important; }
+    a  { color: #8ab4f8 !important; &:hover { text-decoration: underline; } }
+
+    &:before { border-color: #3c4043 transparent !important; }
+    &:after  { border-color: #292a2d transparent !important; }
+  }
+
+  /* ── Sidebar nav list ────────────────────────────────────────────────── */
+  .nav__title     { color: #e8eaed !important; }
+  .nav__sub-title { color: #9aa0a6 !important; border-bottom-color: #3c4043 !important; }
+  .nav__list a    { color: #e8eaed !important; }
+
+  /* ── Table of contents ───────────────────────────────────────────────── */
+  .toc {
+    background-color: #292a2d !important;
+    border-color: #3c4043 !important;
+    color: #9aa0a6 !important;
+    .nav__title { background: #35363a !important; color: #e8eaed !important; }
+  }
+
+  .toc__menu a {
+    color: #9aa0a6 !important;
+    border-bottom-color: #3c4043 !important;
+    &:hover { color: #e8eaed !important; background: #35363a !important; }
+  }
+
+  /* ── Main content ────────────────────────────────────────────────────── */
+  #main { background-color: #202124 !important; }
+
+  .page__title  { color: #e8eaed !important; }
+  .page__lead   { color: #e8eaed !important; }
+
+  .page__content,
+  .page__content--highlight {
+    color: #e8eaed !important;
+
+    h2 { border-bottom-color: #3c4043 !important; }
+
+    a  { color: #8ab4f8 !important; &:hover { color: #aecbfa !important; } }
+
+    blockquote {
+      background-color: #292a2d !important;
+      border-left-color: #8ab4f8 !important;
+      color: #9aa0a6 !important;
+    }
+
+    .small { color: #9aa0a6 !important; }
+  }
+
+  /* ── single.html 인라인 스타일 오버라이드 ─────────────────────────────── */
+  /* .content-wrapper / .content-divider 는 single.html <style> 블록에서
+     background-color 가 하드코딩되어 있어 !important 로 덮어씀           */
+  .content-wrapper {
+    background-color: #292a2d !important;
+    color: #e8eaed !important;
+
+    p, li, dt, dd, span, td, th { color: #e8eaed !important; }
+    h1, h2, h3, h4, h5, h6      { color: #e8eaed !important; }
+    strong { color: #e8eaed !important; }
+    em     { color: #c8cace !important; }
+
+    a { color: #8ab4f8 !important; &:hover { color: #aecbfa !important; } }
+
+    blockquote {
+      background-color: #35363a !important;
+      border-left-color: #8ab4f8 !important;
+      color: #9aa0a6 !important;
+    }
+
+    code {
+      background-color: #35363a !important;
+      color: #e8eaed !important;
+    }
+
+    pre {
+      background-color: #1e1e2e !important;
+      color: #e8eaed !important;
+    }
+
+    table {
+      color: #e8eaed !important;
+      thead { background-color: #35363a !important; }
+      tbody tr:nth-child(even) { background-color: #35363a !important; }
+      tbody tr:nth-child(odd)  { background-color: #292a2d !important; }
+      td, th { border-color: #3c4043 !important; }
+    }
+
+    hr { border-color: #3c4043 !important; }
+  }
+
+  .content-divider,
+  .content-divider2 {
+    background-color: #3c4043 !important;
+  }
+
+  /* ── Archive item cards (.archive__item / .archive__item2) ───────────── */
+  .archive__item {
+    background-color: #292a2d !important;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4) !important;
+
+    &:hover { background-color: #35363a !important; }
+  }
+
+  .archive__item2 {
+    background-color: #292a2d !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4) !important;
+
+    &:hover { background-color: #35363a !important; }
+  }
+
+  .archive__item-title {
+    color: #e8eaed !important;
+    a { color: #e8eaed !important; &:hover { color: #8ab4f8 !important; } }
+  }
+
+  .archive__item-excerpt { color: #9aa0a6 !important; }
+
+  .archive__subtitle {
+    color: #9aa0a6 !important;
+    border-bottom-color: #3c4043 !important;
+  }
+
+  .archive {
+    color: #e8eaed !important;
+    h1, h2, h3 { color: #e8eaed !important; }
+  }
+
+  /* ── Feature row ─────────────────────────────────────────────────────── */
+  .feature__wrapper { border-bottom-color: #3c4043 !important; }
+
+  /* ── Category card (.cate-card) ─────────────────────────────────────── */
+  .cate-card {
+    background: #292a2d !important;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.35) !important;
+
+    &:hover {
+      box-shadow: 0 6px 24px rgba(0, 0, 0, 0.55) !important;
+    }
+
+    &__name  { color: #e8eaed !important; }
+    &__desc  { color: #9aa0a6 !important; }
+    &__count { color: #fff !important; }
+    &__link  { color: var(--cc) !important; }
+
+    &__icon i { color: var(--cc) !important; }
+  }
+
+  /* ── Modern card (레거시, 혹시 남아있을 경우) ──────────────────────── */
+  .modern-card {
+    background: #292a2d !important;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4) !important;
+
+    &:hover, &:focus-within {
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.55) !important;
+    }
+  }
+
+  .modern-card-link  { color: #e8eaed !important; &:hover { background: transparent !important; } }
+  .modern-card-title { color: #e8eaed !important; }
+  .modern-card-desc  { color: #9aa0a6 !important; }
+  .modern-card-btn   { background: #4a90d9 !important; color: #e8eaed !important; }
+
+  /* ── collapse.css 클래스 ──────────────────────────────────────────────── */
+  .container {
+    border-color: #3c4043 !important;
+    background-color: #202124 !important;
+    color: #e8eaed !important;
+
+    .header {
+      background-color: #35363a !important;
+      color: #e8eaed !important;
+    }
+
+    .content {
+      background-color: #292a2d !important;
+      color: #e8eaed !important;
+    }
+  }
+
+  /* ── Breadcrumbs ─────────────────────────────────────────────────────── */
+  .breadcrumbs a { color: #8ab4f8 !important; }
+
+  /* ── Page meta / dates ───────────────────────────────────────────────── */
+  .page__meta  { color: #9aa0a6 !important; a { color: #9aa0a6 !important; } }
+  .page__date  { color: #9aa0a6 !important; }
+  .page__share { border-top-color: #3c4043 !important; }
+
+  /* ── Taxonomy tags ───────────────────────────────────────────────────── */
+  .page__taxonomy-item {
+    color: #e8eaed !important;
+    border-color: #3c4043 !important;
+    background-color: #292a2d !important;
+    &:hover { color: #8ab4f8 !important; border-color: #8ab4f8 !important; }
+  }
+
+  /* ── Related posts ───────────────────────────────────────────────────── */
+  .page__related { border-top-color: #3c4043 !important; a { color: #e8eaed !important; } }
+  .page__related-title { color: #9aa0a6 !important; }
+
+  /* ── Pagination ──────────────────────────────────────────────────────── */
+  .pagination {
+    border-top-color: #3c4043 !important;
+
+    a {
+      color: #e8eaed !important;
+      border-color: #3c4043 !important;
+      background: #292a2d !important;
+      &:hover   { color: #8ab4f8 !important; }
+      &.current { color: #202124 !important; background: #8ab4f8 !important; }
+    }
+  }
+
+  .pagination--pager {
+    color: #e8eaed !important;
+    border-color: #3c4043 !important;
+    background: #292a2d !important;
+    &:hover { color: #8ab4f8 !important; }
+  }
+
+  /* ── Notices ─────────────────────────────────────────────────────────── */
+  .notice,
+  .notice--primary,
+  .notice--info,
+  .notice--warning,
+  .notice--danger,
+  .notice--success {
+    background-color: #292a2d !important;
+    color: #e8eaed !important;
+    border-color: #3c4043 !important;
+    a { color: #8ab4f8 !important; }
+  }
+
+  /* ── Code / syntax ───────────────────────────────────────────────────── */
+  code {
+    background-color: #35363a !important;
+    color: #e8eaed !important;
+    border-color: #3c4043 !important;
+  }
+
+  pre {
+    background-color: #292a2d !important;
+    color: #e8eaed !important;
+    border-color: #3c4043 !important;
+  }
+
+  .highlight {
+    background: #292a2d !important;
+    .c, .cm, .c1 { color: #9aa0a6 !important; }
+    .s, .s1, .s2 { color: #81c995 !important; }
+    .k, .kd      { color: #ff8bcb !important; }
+    .mi, .mf     { color: #fcad70 !important; }
+    .na, .nf     { color: #8ab4f8 !important; }
+  }
+
+  /* ── Tables ──────────────────────────────────────────────────────────── */
+  table {
+    color: #e8eaed !important;
+    thead { background-color: #35363a !important; color: #e8eaed !important; }
+    tbody tr:nth-child(even) { background-color: #292a2d !important; }
+    tbody tr:nth-child(odd)  { background-color: #202124 !important; }
+    td, th { border-color: #3c4043 !important; color: #e8eaed !important; }
+  }
+
+  /* ── Comments ────────────────────────────────────────────────────────── */
+  .page__comments-form    { background: #292a2d !important; }
+  .page__comments-title   { border-top-color: #3c4043 !important; color: #9aa0a6 !important; }
+  .comment                { border-bottom-color: #3c4043 !important; }
+  .comment__avatar        { border-color: #3c4043 !important; }
+  .comment__author        { color: #e8eaed !important; }
+  .comment__date          { color: #9aa0a6 !important; }
+
+  /* ── Forms / inputs ──────────────────────────────────────────────────── */
+  input, textarea, select {
+    background-color: #35363a !important;
+    color: #e8eaed !important;
+    border-color: #3c4043 !important;
+  }
+
+  /* ── Buttons ─────────────────────────────────────────────────────────── */
+  .btn--inverse {
+    background-color: #35363a !important;
+    color: #e8eaed !important;
+    border-color: #3c4043 !important;
+    &:hover { background-color: #3c4043 !important; color: #e8eaed !important; }
+  }
+
+  /* ── Footer ──────────────────────────────────────────────────────────── */
+  .page__footer {
+    background-color: #292a2d !important;
+    border-top-color: #3c4043 !important;
+    color: #9aa0a6 !important;
+
+    a { color: #9aa0a6 !important; &:hover { color: #8ab4f8 !important; } }
+    .fas, .fab, .far, .fal { color: #9aa0a6 !important; }
+    p, li, span { color: #9aa0a6 !important; }
+  }
+
+  /* ── Page hero ───────────────────────────────────────────────────────── */
+  .page__hero--overlay { background-color: #292a2d !important; }
+}

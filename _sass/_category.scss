@@ -1,0 +1,135 @@
+/* ==========================================================================
+   Category Cards
+   ========================================================================== */
+
+.cate-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+  margin-bottom: 2em;
+
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.cate-card {
+  --cc:    #7a8288;               /* 포인트 색  — categories.yml 에서 덮어씀 */
+  --cc-bg: rgba(122,130,136,0.2); /* 아이콘 배경 — 위와 동일 */
+
+  position: relative;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 1.5rem 1.5rem 1.25rem;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  transition: box-shadow 0.2s ease, transform 0.15s ease;
+  overflow: hidden;
+
+  &:hover {
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.13);
+    transform: translateY(-3px);
+  }
+
+  /* ── 상단 컬러 라인 ─────────────────────────────── */
+  &__topline {
+    position: absolute;
+    top: 0;
+    left: 1.5rem;
+    width: 3.5rem;
+    height: 4px;
+    background: var(--cc);
+    border-radius: 0 0 6px 6px;
+  }
+
+  /* ── 헤더 (아이콘 + 제목 + 카운트) ─────────────── */
+  &__header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 0.6rem;
+  }
+
+  /* ── 아이콘 박스 ────────────────────────────────── */
+  &__icon {
+    flex-shrink: 0;
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
+    background: var(--cc-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* 흑백 이미지 → 흰색 변환 */
+    img {
+      width: 30px;
+      height: 30px;
+      object-fit: contain;
+      filter: brightness(0) invert(1);
+    }
+
+    /* Font Awesome 폴백 아이콘 */
+    i {
+      font-size: 1.5rem;
+      color: var(--cc);
+    }
+  }
+
+  /* ── 제목 영역 ──────────────────────────────────── */
+  &__title-wrap {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    flex: 1;
+  }
+
+  &__name {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    line-height: 1.2;
+    margin: 0;
+  }
+
+  &__count {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 24px;
+    padding: 2px 8px;
+    background: var(--cc);
+    color: #fff;
+    border-radius: 20px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    line-height: 1.5;
+  }
+
+  /* ── 설명 ───────────────────────────────────────── */
+  &__desc {
+    margin: 0;
+    font-size: 0.88rem;
+    color: #555;
+    line-height: 1.65;
+    flex: 1;
+  }
+
+  /* ── 바로가기 링크 ──────────────────────────────── */
+  &__link {
+    align-self: flex-end;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--cc) !important;
+    text-decoration: none !important;
+    transition: opacity 0.15s ease;
+
+    &:hover {
+      opacity: 0.75;
+      text-decoration: none !important;
+    }
+  }
+}

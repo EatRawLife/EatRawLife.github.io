@@ -3,41 +3,51 @@ layout: archive
 permalink: /
 title: "Category"
 author_profile: true
-redirect_from: 
+redirect_from:
   - /about/
   - /about.html
 ---
 
 {% include base_path %}
-{% assign columns_per_row = 4 %}
 
+<div class="cate-grid">
 {% for category in site.data.categories %}
-  {% assign col_index = forloop.index0 | modulo: columns_per_row %}
 
-  {% if col_index == 0 %}
-    {% unless forloop.first %}</div>{% endunless %}
-    <div class="archive__cate-row">
+  {% comment %} 포스트 카운트 계산 {% endcomment %}
+  {% if category.tag and category.tag != "" %}
+    {% assign count = 0 %}
+    {% for post in site.posts %}
+      {% if post.tags contains category.tag %}
+        {% assign count = count | plus: 1 %}
+      {% endif %}
+    {% endfor %}
+  {% else %}
+    {% assign count = site.posts.size %}
   {% endif %}
 
-  <div class="modern-card">
-    <div class="modern-card-link">
-      <div class="modern-card-topline"></div>
-      <div class="modern-card-icon">
-        <svg width="40" height="40" viewBox="0 0 24 24" fill="none">
-          <linearGradient id="folderGradient" x1="0" y1="0" x2="0" y2="24" gradientUnits="userSpaceOnUse">
-            <stop stop-color="#FFE082"/>
-            <stop offset="1" stop-color="#FFB300"/>
-          </linearGradient>
-          <path d="M2 6a2 2 0 0 1 2-2h5.17a2 2 0 0 1 1.41.59l1.83 1.83H20a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6z" fill="url(#folderGradient)"/>
-        </svg>
+  <div class="cate-card" style="--cc: {{ category.color }}; --cc-bg: {{ category.icon_bg }};">
+    <div class="cate-card__topline"></div>
+
+    <div class="cate-card__header">
+      <div class="cate-card__icon">
+        {% if category.icon and category.icon != "" %}
+          <img src="{{ category.icon | relative_url }}" alt="{{ category.name }}">
+        {% else %}
+          <i class="{{ category.fa_icon }}"></i>
+        {% endif %}
       </div>
-      <h1 class="modern-card-title">{{ category.name }}</h1>
-      {% if category.description %}
-        <p class="modern-card-desc">{{ category.description | escape }}</p>
-      {% endif %}
-      <a class="modern-card-btn" href="{{ category.path | relative_url }}">이동</a>
+      <div class="cate-card__title-wrap">
+        <span class="cate-card__name">{{ category.name }}</span>
+        <span class="cate-card__count">{{ count }}</span>
+      </div>
     </div>
+
+    {% if category.description %}
+      <p class="cate-card__desc">{{ category.description }}</p>
+    {% endif %}
+
+    <a class="cate-card__link" href="{{ category.path | relative_url }}">바로가기 →</a>
   </div>
 
-  {% if forloop.last %}</div>{% endif %}
 {% endfor %}
+</div>
