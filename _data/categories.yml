@@ -4,6 +4,15 @@
 # icon      : 흑백 이미지 경로 (제공 시 fa_icon 대신 표시됨, 자동으로 흰색 처리)
 # tag       : 포스트 태그 (비워두면 전체 포스트 카운트)
 
+- name: 학습 일지
+  description: 주제에 상관없이 자신이 부족한 부분을 개선하려는 노력과 그 성과를 매주 공유합니다.
+  path: /maxrandom/
+  tag: 학습일지
+  color: "#f59e0b"
+  icon_bg: "rgba(245, 158, 11, 0.18)"
+  fa_icon: "fas fa-code"
+  icon:
+
 - name: 기술 탐구
   description: 흥미가 가는 기술들이 나오게 된 배경을 살펴보고 직접 사용해봅니다.
   path: /experiment/
@@ -29,15 +38,6 @@
   color: "#a855f7"
   icon_bg: "rgba(168, 85, 247, 0.18)"
   fa_icon: "fas fa-graduation-cap"
-  icon:
-
-- name: Max Random 랩 미팅
-  description: 주제에 상관없이 자신이 부족한 부분을 개선하려는 노력과 그 성과를 매주 공유합니다.
-  path: /maxrandom/
-  tag: Max Random 랩미팅
-  color: "#f59e0b"
-  icon_bg: "rgba(245, 158, 11, 0.18)"
-  fa_icon: "fas fa-code"
   icon:
 
 - name: 모각코
