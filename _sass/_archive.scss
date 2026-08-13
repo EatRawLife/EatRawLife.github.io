@@ -33,15 +33,12 @@
   font-size: $type-size-5;
   color: mix(#fff, $gray, 15%);
   border-bottom: 2px solid #aaaaaab0; // 선도 진하게
-
-  + .list__item .archive__item-title {
-    margin-top: 0.2em;
-  }
 }
 
 
 
 .archive__item-title {
+  margin-top: 0;
   margin-bottom: 0.25em;
   font-family: $sans-serif-narrow;
 
@@ -276,6 +273,45 @@
 
   &:hover {
     background-color: #f0f0f0;   // 마우스 올리면 살짝 진해짐
+  }
+}
+
+/*
+   List thumbnail (square image on the left)
+   ========================================================================== */
+
+.archive__item--thumb {
+  display: flex;
+  align-items: center;
+  gap: 1.25em;
+
+  .archive__item-body {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+}
+
+.archive__item-thumb {
+  flex: 0 0 auto;
+  width: 140px;
+  height: 140px;
+  border-radius: $border-radius;
+  overflow: hidden;
+
+  @include breakpoint($small) {
+    width: 180px;
+    height: 180px;
+  }
+
+  @include breakpoint($medium) {
+    width: 200px;
+    height: 200px;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 }
 

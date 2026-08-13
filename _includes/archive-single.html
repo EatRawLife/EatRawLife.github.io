@@ -12,19 +12,32 @@
   {% assign title = post.title %}
 {% endif %}
 
+{% if teaser contains "://" %}
+  {% assign teaser_url = teaser %}
+{% else %}
+  {% assign teaser_url = teaser | prepend: "/images/" | prepend: base_path %}
+{% endif %}
+
+{% assign show_thumb = false %}
+{% if include.thumbnail and teaser %}
+  {% assign show_thumb = true %}
+{% endif %}
+
 <div class="{{ include.type | default: "list" }}__item">
-  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+  <article class="archive__item{% if show_thumb %} archive__item--thumb{% endif %}" itemscope itemtype="http://schema.org/CreativeWork">
     {% if include.type == "grid" and teaser %}
       <div class="archive__item-teaser">
-        <img src=
-          {% if teaser contains "://" %}
-            "{{ teaser }}"
-          {% else %}
-            "{{ teaser | prepend: "/images/" | prepend: base_path }}"
-          {% endif %}
-          alt="">
+        <img src="{{ teaser_url }}" alt="">
       </div>
     {% endif %}
+
+    {% if show_thumb %}
+      <div class="archive__item-thumb">
+        <img src="{{ teaser_url }}" alt="">
+      </div>
+    {% endif %}
+
+    <div class="archive__item-body">
 
     <h2 class="archive__item-title" itemprop="headline">
       {% if post.link %}
@@ -67,6 +80,8 @@
     {% elsif post.slidesurl %}
       <p>Download <a href="{{ post.slidesurl }}">Download Slides</a></p></p>
     {% endif %}
+
+    </div>
 
   </article>
 </div>
